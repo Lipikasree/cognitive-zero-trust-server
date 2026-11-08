@@ -11,7 +11,9 @@ A Windows-hosted SSH gateway that checks commands during a session and adjusts a
 - Quarantines profile updates and accepts administrator feedback.
 - Sends telemetry to Grafana and Loki, with local alert capture and optional Brevo email.
 
-![Live alert delivery measurements](docs/images/alert-delivery.png)
+![CZTS Grafana dashboard from the clean local run](docs/images/grafana-dashboard.png)
+
+*Dashboard screenshot; session identifiers redacted.*
 
 ## Start
 

@@ -92,9 +92,19 @@ Run the scripted checks with `python eval/scripts/evaluate_stage16.py`.
 
 ## Live SSH and alert measurements
 
-The PTY capture check used 30 SSH sessions: 20 ordinary command lines and 10 lines containing arrow keys or Tab. Ordinary lines matched exactly in 20/20 cases; all 10 awkward lines failed closed and no test payload was executed. A separate alternate-screen check recorded start/end transitions and trust decay over an observed 0.205 seconds.
+![CZTS Grafana dashboard from the clean local run](images/grafana-dashboard.png)
 
-The live alert run used five restricted and five discarded gateway sessions. Alerts reached the local webhook in about 70–80 seconds: measured median was 77.820 seconds for restricted transitions and 68.554 seconds for discarded transitions; worst observations were 82.942 and 71.601 seconds. Email delivery was confirmed by hand but not timed.
+The session-ID legend is redacted from this screenshot.
+
+The PTY capture check used 30 SSH sessions: 20 ordinary command lines and 10 lines containing arrow keys or Tab. Ordinary lines matched exactly in 20/20 cases; all 10 awkward lines failed closed and no test payload was executed. A separate alternate-screen check recorded start/end transitions and trust decay over an observed 0.205 seconds. The SSH setup-plus-`whoami` benchmark measured a median added 1,478.6 ms; the direct and gateway probes ran in different network contexts, so this is not a controlled overhead estimate.
+
+![PTY capture check](../eval/results/capture_accuracy.png)
+
+![SSH latency measurements](../eval/results/latency.png)
+
+![Alternate-screen check](../eval/results/alt_screen.png)
+
+A live gateway-path smoke test created five restricted and five discarded sessions. A separate alert-delay measurement recorded event-to-local-webhook medians of 77.820 seconds for restricted events (10 observations) and 68.554 seconds for discarded events (5 observations); worst observations were 82.942 and 71.601 seconds. Email delivery was confirmed by hand but not timed per alert.
 
 ![Alert delay graph](images/alert-delivery.png)
 
