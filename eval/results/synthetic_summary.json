@@ -1,0 +1,24 @@
+{
+  "synthetic_only": true,
+  "seed": 73,
+  "split_unit": "session",
+  "validation_benign_sessions": 136,
+  "test_sessions": 160,
+  "models": {
+    "per_user": {
+      "threshold_at_5pct_validation_fpr": 2.0139153147449673,
+      "test_benign": 136,
+      "test_malicious": 24,
+      "test_false_positive_rate": 0.058823529411764705,
+      "test_detection_rate": 0.6666666666666666
+    },
+    "global": {
+      "threshold_at_5pct_validation_fpr": 2.360830606472346,
+      "test_benign": 136,
+      "test_malicious": 24,
+      "test_false_positive_rate": 0.04411764705882353,
+      "test_detection_rate": 1.0
+    }
+  },
+  "generated_session_count": 880
+}

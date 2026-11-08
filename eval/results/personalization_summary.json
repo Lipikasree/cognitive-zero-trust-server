@@ -1,0 +1,198 @@
+{
+  "synthetic_only": true,
+  "split_unit": "session",
+  "seeds": [
+    73,
+    74,
+    75,
+    76,
+    77
+  ],
+  "summary": {
+    "per_user": {
+      "test_detection_rate": {
+        "mean": 0.6666666666666666,
+        "stdev": 0.0,
+        "per_seed": [
+          0.6666666666666666,
+          0.6666666666666666,
+          0.6666666666666666,
+          0.6666666666666666,
+          0.6666666666666666
+        ]
+      },
+      "test_false_positive_rate": {
+        "mean": 0.057352941176470586,
+        "stdev": 0.00805474349272303,
+        "per_seed": [
+          0.058823529411764705,
+          0.058823529411764705,
+          0.04411764705882353,
+          0.0661764705882353,
+          0.058823529411764705
+        ]
+      }
+    },
+    "global": {
+      "test_detection_rate": {
+        "mean": 0.9916666666666667,
+        "stdev": 0.01863389981249823,
+        "per_seed": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.9583333333333334
+        ]
+      },
+      "test_false_positive_rate": {
+        "mean": 0.047058823529411764,
+        "stdev": 0.01986655306780338,
+        "per_seed": [
+          0.04411764705882353,
+          0.08088235294117647,
+          0.04411764705882353,
+          0.03676470588235294,
+          0.029411764705882353
+        ]
+      }
+    }
+  },
+  "runs": [
+    {
+      "seed": 73,
+      "results": {
+        "synthetic_only": true,
+        "seed": 73,
+        "split_unit": "session",
+        "validation_benign_sessions": 136,
+        "test_sessions": 160,
+        "models": {
+          "per_user": {
+            "threshold_at_5pct_validation_fpr": 2.0139153147449673,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.058823529411764705,
+            "test_detection_rate": 0.6666666666666666
+          },
+          "global": {
+            "threshold_at_5pct_validation_fpr": 2.360830606472346,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.04411764705882353,
+            "test_detection_rate": 1.0
+          }
+        },
+        "generated_session_count": 880
+      }
+    },
+    {
+      "seed": 74,
+      "results": {
+        "synthetic_only": true,
+        "seed": 74,
+        "split_unit": "session",
+        "validation_benign_sessions": 136,
+        "test_sessions": 160,
+        "models": {
+          "per_user": {
+            "threshold_at_5pct_validation_fpr": 2.0653207192776937,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.058823529411764705,
+            "test_detection_rate": 0.6666666666666666
+          },
+          "global": {
+            "threshold_at_5pct_validation_fpr": 2.2815613054447423,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.08088235294117647,
+            "test_detection_rate": 1.0
+          }
+        },
+        "generated_session_count": 880
+      }
+    },
+    {
+      "seed": 75,
+      "results": {
+        "synthetic_only": true,
+        "seed": 75,
+        "split_unit": "session",
+        "validation_benign_sessions": 136,
+        "test_sessions": 160,
+        "models": {
+          "per_user": {
+            "threshold_at_5pct_validation_fpr": 2.019575450193498,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.04411764705882353,
+            "test_detection_rate": 0.6666666666666666
+          },
+          "global": {
+            "threshold_at_5pct_validation_fpr": 2.300929991761889,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.04411764705882353,
+            "test_detection_rate": 1.0
+          }
+        },
+        "generated_session_count": 880
+      }
+    },
+    {
+      "seed": 76,
+      "results": {
+        "synthetic_only": true,
+        "seed": 76,
+        "split_unit": "session",
+        "validation_benign_sessions": 136,
+        "test_sessions": 160,
+        "models": {
+          "per_user": {
+            "threshold_at_5pct_validation_fpr": 2.0348161872999593,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.0661764705882353,
+            "test_detection_rate": 0.6666666666666666
+          },
+          "global": {
+            "threshold_at_5pct_validation_fpr": 2.2991686317451316,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.03676470588235294,
+            "test_detection_rate": 1.0
+          }
+        },
+        "generated_session_count": 880
+      }
+    },
+    {
+      "seed": 77,
+      "results": {
+        "synthetic_only": true,
+        "seed": 77,
+        "split_unit": "session",
+        "validation_benign_sessions": 136,
+        "test_sessions": 160,
+        "models": {
+          "per_user": {
+            "threshold_at_5pct_validation_fpr": 2.010985960399113,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.058823529411764705,
+            "test_detection_rate": 0.6666666666666666
+          },
+          "global": {
+            "threshold_at_5pct_validation_fpr": 2.248670089917873,
+            "test_benign": 136,
+            "test_malicious": 24,
+            "test_false_positive_rate": 0.029411764705882353,
+            "test_detection_rate": 0.9583333333333334
+          }
+        },
+        "generated_session_count": 880
+      }
+    }
+  ]
+}

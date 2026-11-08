@@ -1,0 +1,132 @@
+{
+  "seed": 20261103,
+  "source": "COW160 Cowrie daily command logs; each download verifies the Zenodo license metadata",
+  "session_split": "temporal: each test day uses only earlier days for attacker-profile training",
+  "threshold": "95th percentile of separate synthetic benign validation-session attacker likelihood",
+  "benign_test": "held-out synthetic benign sessions; not real benign gateway traffic",
+  "raw_day_count": 6,
+  "days": [
+    "2025-06-27",
+    "2025-06-28",
+    "2025-06-29",
+    "2025-06-30",
+    "2025-07-01",
+    "2025-07-02"
+  ],
+  "gateway_temporal_dataset_rows": 276512,
+  "gateway_training_days": [
+    "2025-06-27",
+    "2025-06-28",
+    "2025-06-29",
+    "2025-06-30"
+  ],
+  "gateway_excluded_test_days": [
+    "2025-07-01",
+    "2025-07-02"
+  ],
+  "trained_profile_privacy_checks": [
+    {
+      "test_day": "2025-06-28",
+      "profile_transition_count": 253,
+      "contains_ip_or_url_literals": false
+    },
+    {
+      "test_day": "2025-06-29",
+      "profile_transition_count": 266,
+      "contains_ip_or_url_literals": false
+    },
+    {
+      "test_day": "2025-06-30",
+      "profile_transition_count": 299,
+      "contains_ip_or_url_literals": false
+    },
+    {
+      "test_day": "2025-07-01",
+      "profile_transition_count": 332,
+      "contains_ip_or_url_literals": false
+    },
+    {
+      "test_day": "2025-07-02",
+      "profile_transition_count": 354,
+      "contains_ip_or_url_literals": false
+    }
+  ],
+  "daily_results": [
+    {
+      "test_day": "2025-06-28",
+      "training_days": [
+        "2025-06-27"
+      ],
+      "label": "day_summary",
+      "cowrie_sessions": 60667,
+      "benign_test_sessions": 136,
+      "cowrie_detection_rate": 0.9986813259267806,
+      "synthetic_benign_false_positive_rate": 0.029411764705882353,
+      "threshold_from_validation_benign_sessions": -3.9503406405842387,
+      "attacker_profile_transitions": 13552.79865942967
+    },
+    {
+      "test_day": "2025-06-29",
+      "training_days": [
+        "2025-06-27",
+        "2025-06-28"
+      ],
+      "label": "day_summary",
+      "cowrie_sessions": 40164,
+      "benign_test_sessions": 136,
+      "cowrie_detection_rate": 0.9967383726720446,
+      "synthetic_benign_false_positive_rate": 0.03676470588235294,
+      "threshold_from_validation_benign_sessions": -3.946134750303657,
+      "attacker_profile_transitions": 17262.940933860697
+    },
+    {
+      "test_day": "2025-06-30",
+      "training_days": [
+        "2025-06-27",
+        "2025-06-28",
+        "2025-06-29"
+      ],
+      "label": "day_summary",
+      "cowrie_sessions": 36274,
+      "benign_test_sessions": 136,
+      "cowrie_detection_rate": 0.9993935049897998,
+      "synthetic_benign_false_positive_rate": 0.03676470588235294,
+      "threshold_from_validation_benign_sessions": -3.9659000526413815,
+      "attacker_profile_transitions": 18259.130145310515
+    },
+    {
+      "test_day": "2025-07-01",
+      "training_days": [
+        "2025-06-27",
+        "2025-06-28",
+        "2025-06-29",
+        "2025-06-30"
+      ],
+      "label": "day_summary",
+      "cowrie_sessions": 36854,
+      "benign_test_sessions": 136,
+      "cowrie_detection_rate": 0.9996743908395289,
+      "synthetic_benign_false_positive_rate": 0.03676470588235294,
+      "threshold_from_validation_benign_sessions": -4.014876944919002,
+      "attacker_profile_transitions": 18929.527118106646
+    },
+    {
+      "test_day": "2025-07-02",
+      "training_days": [
+        "2025-06-27",
+        "2025-06-28",
+        "2025-06-29",
+        "2025-06-30",
+        "2025-07-01"
+      ],
+      "label": "day_summary",
+      "cowrie_sessions": 47328,
+      "benign_test_sessions": 136,
+      "cowrie_detection_rate": 0.9998520960108181,
+      "synthetic_benign_false_positive_rate": 0.04411764705882353,
+      "threshold_from_validation_benign_sessions": -3.5656858971571888,
+      "attacker_profile_transitions": 19676.102651034485
+    }
+  ],
+  "limitations": "Cowrie honeypot sessions are attacker-like, not attacks against an authenticated gateway. Synthetic benign sessions are not a real-world false-positive estimate. Token likelihood is only one profile-match signal."
+}

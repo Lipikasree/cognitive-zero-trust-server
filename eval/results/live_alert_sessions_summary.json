@@ -1,0 +1,9 @@
+{
+  "method": "real interactive SSH sessions through the gateway; wrong TOTP and repeated sensitive-file reads are blocked; no risky commands are forwarded",
+  "trials_per_state": 5,
+  "session_count": 10,
+  "restricted_sessions": 5,
+  "discarded_sessions": 5,
+  "gateway_policy_path": true,
+  "email_receipt_timing": "measured separately; local webhook timestamps do not prove inbox arrival time"
+}

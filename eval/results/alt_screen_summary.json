@@ -1,0 +1,12 @@
+{
+  "seed": 20261103,
+  "session_id": "5bed2186-38ac-4b8a-9823-0419951d6de3",
+  "scenario": "interactive target command emits ESC[?1049h and ESC[?1049l",
+  "marker_observed": true,
+  "start_event_count": 1,
+  "end_event_count": 1,
+  "start_state": "restricted",
+  "end_state": "allowed",
+  "duration_seconds": 0.205,
+  "capture_succeeded": true
+}

@@ -1,0 +1,11 @@
+{
+  "seed": 20261103,
+  "method": "Runs actual promote_quarantine and label_session functions against a temporary SQLite store.",
+  "quarantined_attempts": 2,
+  "released_into_user_profile": 0,
+  "ineligible_rule_hit_status": "rejected",
+  "ineligible_restricted_history_status": "rejected",
+  "confirmed_attack_quarantine_status": "rejected",
+  "confirmed_attack_entered_attacker_profile": true,
+  "confirmed_attack_leaked_into_user_profile": false
+}

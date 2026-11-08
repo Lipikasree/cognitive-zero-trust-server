@@ -1,0 +1,14 @@
+{
+  "seed": 20261103,
+  "interactive_sessions": 30,
+  "ordinary_sessions": 20,
+  "ordinary_commands": 20,
+  "ordinary_exact_matches": 20,
+  "ordinary_capture_accuracy": 1.0,
+  "ordinary_fail_closed_sessions": 0,
+  "ordinary_fail_closed_rate": 0.0,
+  "awkward_sessions": 10,
+  "awkward_fail_closed_sessions": 10,
+  "awkward_fail_closed_rate": 1.0,
+  "awkward_payload_execution_count": 0
+}

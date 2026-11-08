@@ -1,0 +1,17 @@
+{
+  "scope": "gateway event to local webhook delivery from the email fan-out; not mailbox receipt time",
+  "cohort": "latest live alert session run",
+  "seed": 20261103,
+  "states": {
+    "restricted": {
+      "count": 10,
+      "median_seconds": 77.82,
+      "worst_seconds": 82.942
+    },
+    "discarded": {
+      "count": 5,
+      "median_seconds": 68.554,
+      "worst_seconds": 71.601
+    }
+  }
+}

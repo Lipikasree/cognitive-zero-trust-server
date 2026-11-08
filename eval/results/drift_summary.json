@@ -1,0 +1,1329 @@
+{
+  "synthetic_only": true,
+  "seed": 20261103,
+  "seeds": [
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82
+  ],
+  "split_unit": "whole generated session",
+  "drift_scenarios": {
+    "gradual": "three new-tool commands inserted into the user's usual command list",
+    "clear": "all commands in the drift session come from the changed tool family"
+  },
+  "quarantine_delay_seconds": 300,
+  "automatic_arm_simulated_wait_seconds": 3600,
+  "arms": {
+    "static": "no updates",
+    "automatic": "automatic delayed promotion of eligible clean sessions only",
+    "feedback": "automatic promotion plus admin false-positive label when a known-benign drift session is restricted or blocked"
+  },
+  "role_summary": {
+    "data_analyst": {
+      "gradual": {
+        "static": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        }
+      },
+      "clear": {
+        "static": {
+          "mean_false_positive_rate": 0.925,
+          "ci95_bootstrap": [
+            0.85,
+            0.975
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            0.75
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.875,
+          "ci95_bootstrap": [
+            0.725,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            0.25
+          ],
+          "eligible_released": 5,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.25,
+          "ci95_bootstrap": [
+            0.25,
+            0.25
+          ],
+          "per_seed": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "eligible_released": 30,
+          "sessions": 40
+        }
+      }
+    },
+    "developer": {
+      "gradual": {
+        "static": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        }
+      },
+      "clear": {
+        "static": {
+          "mean_false_positive_rate": 1.0,
+          "ci95_bootstrap": [
+            1.0,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 1.0,
+          "ci95_bootstrap": [
+            1.0,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.25,
+          "ci95_bootstrap": [
+            0.25,
+            0.25
+          ],
+          "per_seed": [
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ],
+          "eligible_released": 30,
+          "sessions": 40
+        }
+      }
+    },
+    "operator": {
+      "gradual": {
+        "static": {
+          "mean_false_positive_rate": 0.6,
+          "ci95_bootstrap": [
+            0.425,
+            0.775
+          ],
+          "per_seed": [
+            1.0,
+            0.5,
+            0.25,
+            0.75,
+            1.0,
+            0.75,
+            0.25,
+            0.75,
+            0.25,
+            0.5
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.6,
+          "ci95_bootstrap": [
+            0.425,
+            0.775
+          ],
+          "per_seed": [
+            1.0,
+            0.5,
+            0.25,
+            0.75,
+            1.0,
+            0.75,
+            0.25,
+            0.75,
+            0.25,
+            0.5
+          ],
+          "eligible_released": 7,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.575,
+          "ci95_bootstrap": [
+            0.425,
+            0.725
+          ],
+          "per_seed": [
+            1.0,
+            0.5,
+            0.25,
+            0.75,
+            0.75,
+            0.75,
+            0.25,
+            0.75,
+            0.25,
+            0.5
+          ],
+          "eligible_released": 7,
+          "sessions": 40
+        }
+      },
+      "clear": {
+        "static": {
+          "mean_false_positive_rate": 1.0,
+          "ci95_bootstrap": [
+            1.0,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 1.0,
+          "ci95_bootstrap": [
+            1.0,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.975,
+          "ci95_bootstrap": [
+            0.925,
+            1.0
+          ],
+          "per_seed": [
+            1.0,
+            1.0,
+            0.75,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        }
+      }
+    },
+    "sysadmin": {
+      "gradual": {
+        "static": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.0,
+          "ci95_bootstrap": [
+            0.0,
+            0.0
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 40,
+          "sessions": 40
+        }
+      },
+      "clear": {
+        "static": {
+          "mean_false_positive_rate": 0.15,
+          "ci95_bootstrap": [
+            0.05,
+            0.25
+          ],
+          "per_seed": [
+            0.25,
+            0.0,
+            0.25,
+            0.5,
+            0.25,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 0,
+          "sessions": 40
+        },
+        "automatic": {
+          "mean_false_positive_rate": 0.025,
+          "ci95_bootstrap": [
+            0.0,
+            0.075
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 39,
+          "sessions": 40
+        },
+        "feedback": {
+          "mean_false_positive_rate": 0.025,
+          "ci95_bootstrap": [
+            0.0,
+            0.075
+          ],
+          "per_seed": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.25,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "eligible_released": 39,
+          "sessions": 40
+        }
+      }
+    }
+  },
+  "trajectory": [
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": -0.7823651223458283,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.7580536586775516,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.6937891345559244,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.6739825217826522,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": -0.7823651223458283,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.9053617534895441,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.889673860612907,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.8787310707563523,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": -0.7823651223458283,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.9053617534895441,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.889673860612907,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.8787310707563523,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": 0.43521396250808014,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": 0.36874425574425573,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": 0.35558441558441556,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": 0.43767520714579533,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": 0.43521396250808014,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": 0.36874425574425573,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": 0.27955590411947145,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": 0.31773941960548,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": 0.43521396250808014,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.7927031546143904,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.9176734107246906,
+      "n": 10
+    },
+    {
+      "role": "data_analyst",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -1.0106825892436635,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": -0.5962928840418981,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.47945549041767077,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.5799163233612893,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.6410169945002627,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": -0.5962928840418981,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.8347053243646982,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.9239373923455145,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.9762045413661413,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": -0.5962928840418981,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.8347053243646982,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.9239373923455145,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.9762045413661413,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": 1.2,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -1.0310626766738318,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -1.0799038907921032,
+      "n": 10
+    },
+    {
+      "role": "developer",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -1.1145948846426803,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": -0.775633192456634,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.9685945167177402,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.8731400544119358,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.8227749326543896,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": -0.775633192456634,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.9664846669025903,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.8713030541620223,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.8353961209685697,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": -0.775633192456634,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.9802371803616787,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.8940066637741899,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.8467643833333682,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": 0.011322673861477579,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.043226163234375545,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.13864082923904886,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.09338663863359152,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": 0.011322673861477579,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.043226163234375545,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.13864082923904886,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.09338663863359152,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": 0.011322673861477579,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.4289276429480699,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.6051980887300908,
+      "n": 10
+    },
+    {
+      "role": "operator",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.7010737988704011,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": -0.8750897176359568,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.86570734695264,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.8455340136056735,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.9203024220270216,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": -0.8750897176359568,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.8742336776967385,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.8841670546541847,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.9178490754508792,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": -0.8750897176359568,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.8742336776967385,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.8841670546541847,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "gradual",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.9178490754508792,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 1,
+      "mean_command_surprise": -0.3634732326497032,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 2,
+      "mean_command_surprise": -0.31171589195118604,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 3,
+      "mean_command_surprise": -0.40887445887445883,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "static",
+      "session_order": 4,
+      "mean_command_surprise": -0.37984815184815185,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 1,
+      "mean_command_surprise": -0.3634732326497032,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 2,
+      "mean_command_surprise": -0.791468622195813,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 3,
+      "mean_command_surprise": -0.9271997924932771,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "automatic",
+      "session_order": 4,
+      "mean_command_surprise": -0.9048855889477501,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 1,
+      "mean_command_surprise": -0.3634732326497032,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 2,
+      "mean_command_surprise": -0.815219515664683,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 3,
+      "mean_command_surprise": -0.9313267464963586,
+      "n": 10
+    },
+    {
+      "role": "sysadmin",
+      "drift_type": "clear",
+      "arm": "feedback",
+      "session_order": 4,
+      "mean_command_surprise": -0.9167861114976406,
+      "n": 10
+    }
+  ],
+  "limitations": "Synthetic labels are known to the harness. Feedback uses oracle-known benign labels to model administrator review; this is an optimistic upper bound. Automatic updates cannot learn restricted sessions under the existing eligibility guard. Forgetting-factor tuning is not included. Results do not establish production drift performance."
+}

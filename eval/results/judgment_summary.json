@@ -1,0 +1,35 @@
+{
+  "synthetic_only": true,
+  "engine_path": "actual Session.evaluate, Trust, Policy, rules, and SQLite Store",
+  "seeds": [
+    73,
+    74,
+    75,
+    76,
+    77
+  ],
+  "counter_baseline": "rule-hit count; restrict at 1 hit and discard at 3",
+  "hijack_session_count": 80,
+  "summary": {
+    "belief_restricted_at": {
+      "observed_sessions": 59,
+      "mean_commands": 7.661016949152542,
+      "median_commands": 8
+    },
+    "belief_discarded_at": {
+      "observed_sessions": 8,
+      "mean_commands": 9,
+      "median_commands": 9.0
+    },
+    "counter_restricted_at": {
+      "observed_sessions": 80,
+      "mean_commands": 6.5375,
+      "median_commands": 7.0
+    },
+    "counter_discarded_at": {
+      "observed_sessions": 59,
+      "mean_commands": 8.101694915254237,
+      "median_commands": 8
+    }
+  }
+}

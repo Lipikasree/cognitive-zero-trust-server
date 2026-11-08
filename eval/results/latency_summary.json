@@ -1,0 +1,7 @@
+{
+  "seed": 20261103,
+  "scope": "AsyncSSH connect plus whoami; direct probe runs in a one-shot container on the private network",
+  "command": "whoami",
+  "median_added_ms": 1478.601,
+  "limitation": "Client network contexts differ: the direct probe is a temporary local Docker service; gateway samples originate from Windows. The probe is removed after measurement."
+}

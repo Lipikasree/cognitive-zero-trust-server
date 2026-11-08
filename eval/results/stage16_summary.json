@@ -1,0 +1,56 @@
+{
+  "synthetic_only": true,
+  "seed": 20261103,
+  "experiments": {
+    "simple_counter_baseline_example": {
+      "scenario": "one sudo enumeration, then a scripted four-rule hijack; counter baseline restricts at one rule hit and discards at three",
+      "commands_to_restricted": {
+        "belief": 4,
+        "counter": 2
+      },
+      "commands_to_discarded": {
+        "belief": 6,
+        "counter": 4
+      },
+      "benign_anomaly_recovery": {
+        "belief_before": 0.72,
+        "belief_after_anomaly": 0.6888,
+        "belief_after_24_benign_updates": 0.8197,
+        "counter_policy_recovers": false
+      }
+    },
+    "metacognition_engine_check": {
+      "method": "actual Session.evaluate, Policy, step-up input path, and SQLite events; paired eight-case scenarios",
+      "malicious_sensitive_attempts": 8,
+      "blocked_with_step_up": 8,
+      "allowed_without_step_up": 8,
+      "clear_benign_actions": 8,
+      "benign_step_up_challenges": 0
+    },
+    "full_session_replay": {
+      "scenario": "single-command state crossings replayed through full-session replay helper, removing the cited command and applying time decay/hysteresis",
+      "state_change_cases": 58,
+      "counterfactual_flips_verified": 58,
+      "verified_fraction": 1.0
+    },
+    "sqlite_poisoning_integration": {
+      "seed": 20261103,
+      "method": "Runs actual promote_quarantine and label_session functions against a temporary SQLite store.",
+      "quarantined_attempts": 2,
+      "released_into_user_profile": 0,
+      "ineligible_rule_hit_status": "rejected",
+      "ineligible_restricted_history_status": "rejected",
+      "confirmed_attack_quarantine_status": "rejected",
+      "confirmed_attack_entered_attacker_profile": true,
+      "confirmed_attack_leaked_into_user_profile": false
+    }
+  },
+  "other_stage16_artifacts": {
+    "personalization": "eval/results/schonlau_summary.json; five-seed results in eval/results/personalization_summary.json",
+    "hijack_response": "eval/results/judgment_summary.json",
+    "drift_and_learning": "eval/results/drift_summary.json",
+    "cold_start": "eval/results/cold_start_repeated_summary.json",
+    "overhead": "eval/results/latency_summary.json",
+    "discard_and_restricted_alerting": "eval/results/alert_latency_summary.json"
+  }
+}
