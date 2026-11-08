@@ -1,0 +1,5 @@
+set disable-completion on
+"\e[A": ""
+"\e[B": ""
+"\e[C": ""
+"\e[D": ""

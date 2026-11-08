@@ -1,0 +1,97 @@
+apiVersion: 1
+groups:
+  - orgId: 1
+    name: CZTS security
+    folder: CZTS
+    interval: 1m
+    rules:
+      - uid: czts_restricted
+        title: CZTS restricted session
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: lokiczts
+            queryType: instant
+            relativeTimeRange:
+              from: 300
+              to: 0
+            model:
+              datasource:
+                type: loki
+                uid: lokiczts
+              editorMode: code
+              expr: sum by (session_id) (count_over_time({job="czts",event_type="state_change",state="restricted"} | json session_id [1m]))
+              queryType: instant
+              refId: A
+              maxLines: 1000
+              intervalMs: 1000
+              maxDataPoints: 43200
+        noDataState: OK
+        execErrState: Alerting
+        for: 0s
+        annotations:
+          summary: CZTS moved one or more sessions into restricted state.
+          description: Inspect the CZTS timeline and rule hits in Grafana or the admin CLI.
+        labels:
+          severity: warning
+          app: czts
+      - uid: czts_discarded
+        title: CZTS discarded session
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: lokiczts
+            queryType: instant
+            relativeTimeRange:
+              from: 300
+              to: 0
+            model:
+              datasource:
+                type: loki
+                uid: lokiczts
+              editorMode: code
+              expr: sum by (session_id) (count_over_time({job="czts",event_type="state_change",state="discarded"} | json session_id [1m]))
+              queryType: instant
+              refId: A
+              maxLines: 1000
+              intervalMs: 1000
+              maxDataPoints: 43200
+        noDataState: OK
+        execErrState: Alerting
+        for: 0s
+        annotations:
+          summary: CZTS discarded a session and may have temporarily locked its account.
+          description: Inspect the CZTS timeline and rule hits in Grafana or the admin CLI.
+        labels:
+          severity: critical
+          app: czts
+      - uid: czts_discard_burst
+        title: CZTS discard burst
+        condition: A
+        data:
+          - refId: A
+            datasourceUid: lokiczts
+            queryType: instant
+            relativeTimeRange:
+              from: 600
+              to: 0
+            model:
+              datasource:
+                type: loki
+                uid: lokiczts
+              editorMode: code
+              expr: sum(count_over_time({job="czts",event_type="state_change",state="discarded"}[5m]))
+              queryType: instant
+              refId: A
+              maxLines: 1000
+              intervalMs: 1000
+              maxDataPoints: 43200
+        noDataState: OK
+        execErrState: Alerting
+        for: 0s
+        annotations:
+          summary: Multiple CZTS sessions were discarded in five minutes.
+          description: Review recent sessions for coordinated activity or an overly aggressive rule.
+        labels:
+          severity: critical
+          app: czts

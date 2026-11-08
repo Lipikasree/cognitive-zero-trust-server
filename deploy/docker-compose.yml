@@ -1,0 +1,118 @@
+services:
+  target:
+    build: ./target
+    container_name: czts-target
+    volumes:
+      - ../keys/upstream.pub:/run/secrets/czts_upstream.pub:ro
+      - ../keys/target_host:/run/secrets/czts_target_host:ro
+    networks: [czts_backend]
+    restart: unless-stopped
+  gateway:
+    build:
+      context: ..
+      dockerfile: deploy/gateway/Dockerfile
+    container_name: czts-gateway
+    ports: ["127.0.0.1:2222:2222"]
+    environment:
+      PYTHONUNBUFFERED: "1"
+      CZTS_HOST: 0.0.0.0
+      CZTS_PORT: "2222"
+      CZTS_HOST_KEY: /app/keys/gateway_host
+      CZTS_USERS: /app/config/users.json
+      CZTS_SETTINGS: /app/config/settings.json
+      CZTS_DB: /app/data/czts.sqlite3
+      CZTS_EVENTS: /app/data/events.jsonl
+      CZTS_ATTACKER_SESSIONS: /app/data/cowrie_multiday_sessions.jsonl
+      CZTS_TOTP_SECRETS: /app/keys/totp_secrets.json
+      UPSTREAM_HOST: target
+      UPSTREAM_PORT: "22"
+      UPSTREAM_KEY: /app/keys/upstream
+      UPSTREAM_KNOWN_HOSTS: /app/keys/upstream_known_hosts
+      LOKI_URL: http://loki:3100
+    volumes:
+      - ../czt:/app/czt:ro
+      - ../config:/app/config:ro
+      - ../data:/app/data
+      - ../keys/gateway_host:/app/keys/gateway_host:ro
+      - ../keys/upstream:/app/keys/upstream:ro
+      - ../keys/upstream_known_hosts:/app/keys/upstream_known_hosts:ro
+      - ../keys/totp_secrets.json:/app/keys/totp_secrets.json:ro
+    networks: [czts_backend, czts_telemetry]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    depends_on: [target, loki]
+    restart: unless-stopped
+  loki:
+    image: grafana/loki:3.5.0
+    command: -config.file=/etc/loki/local-config.yaml
+    ports: ["127.0.0.1:3100:3100"]
+    networks: [czts_telemetry]
+    restart: unless-stopped
+  promtail:
+    image: grafana/promtail:3.5.0
+    command: -config.file=/etc/promtail/config.yml
+    volumes:
+      - ../data:/var/log/czts:ro
+      - ./promtail.yml:/etc/promtail/config.yml:ro
+    depends_on: [loki]
+    networks: [czts_telemetry]
+  alert-sink:
+    image: deploy-gateway
+    container_name: czts-alert-sink
+    command: ["python", "/app/alert_sink.py"]
+    environment:
+      CZTS_ALERTS_FILE: /app/data/alerts.jsonl
+      DISCORD_WEBHOOK_URL: ${DISCORD_WEBHOOK_URL:-}
+    volumes:
+      - ./alert_sink.py:/app/alert_sink.py:ro
+      - ../data:/app/data
+    networks: [czts_telemetry]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    restart: unless-stopped
+  direct-probe:
+    image: deploy-gateway
+    profiles: [benchmark]
+    command: ["python", "/app/eval/scripts/measure_latency.py", "--inside"]
+    volumes:
+      - ../eval:/app/eval:ro
+      - ../keys/upstream:/app/keys/upstream:ro
+      - ../keys/upstream_known_hosts:/app/keys/upstream_known_hosts:ro
+    networks: [czts_backend]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+  grafana:
+    image: grafana/grafana:12.0.0
+    ports: ["127.0.0.1:3000:3000"]
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:?Set GRAFANA_ADMIN_PASSWORD in .env}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_SMTP_ENABLED: ${GF_SMTP_ENABLED:-false}
+      GF_SMTP_HOST: ${GF_SMTP_HOST:-smtp-relay.brevo.com:587}
+      GF_SMTP_USER: ${GF_SMTP_USER:-}
+      GF_SMTP_PASSWORD: ${GF_SMTP_PASSWORD:-}
+      GF_SMTP_FROM_ADDRESS: ${GF_SMTP_FROM_ADDRESS:-}
+      GF_SMTP_FROM_NAME: ${GF_SMTP_FROM_NAME:-ZT Gateway Alerts}
+      GF_SMTP_STARTTLS_POLICY: ${GF_SMTP_STARTTLS_POLICY:-MandatoryStartTLS}
+      GF_ALERT_RECIPIENT: ${GF_ALERT_RECIPIENT:-alerts@example.invalid}
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on: [loki, alert-sink]
+    networks: [czts_telemetry]
+    restart: unless-stopped
+
+networks:
+  czts_backend:
+    internal: true
+  czts_telemetry:
