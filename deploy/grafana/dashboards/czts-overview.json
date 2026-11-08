@@ -67,7 +67,8 @@
           ],
           "values": false
         }
-      }
+      },
+      "description": "Historical event count for the stated time window; this does not indicate currently active sessions."
     },
     {
       "id": 2,
@@ -121,7 +122,8 @@
           ],
           "values": false
         }
-      }
+      },
+      "description": "Historical event count for the stated time window; this does not indicate currently active sessions."
     },
     {
       "id": 3,
@@ -151,12 +153,13 @@
           ],
           "values": false
         }
-      }
+      },
+      "description": "Historical event count for the stated time window; this does not indicate currently active sessions."
     },
     {
       "id": 4,
       "type": "timeseries",
-      "title": "Trust belief by session",
+      "title": "Average trust belief across sessions",
       "gridPos": {
         "h": 9,
         "w": 12,
@@ -170,9 +173,9 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (session_id) (avg_over_time({job=\"czts\",event_type=\"command\"} | json | label_format session_id=\"{{.session_id}}\" | unwrap belief [1m]))",
+          "expr": "avg(avg_over_time({job=\"czts\",event_type=\"command\"} | json | unwrap belief [30s]))",
           "queryType": "range",
-          "legendFormat": "{{session_id}}"
+          "legendFormat": "Mean belief"
         }
       ],
       "fieldConfig": {
@@ -185,7 +188,11 @@
         "legend": {
           "displayMode": "list",
           "placement": "bottom"
-        }
+        },
+        "drawStyle": "line",
+        "lineWidth": 2,
+        "showPoints": "always",
+        "pointSize": 6
       }
     },
     {
@@ -303,7 +310,8 @@
           "displayMode": "list",
           "placement": "bottom"
         }
-      }
+      },
+      "description": "Historical event count for the stated time window; this does not indicate currently active sessions."
     },
     {
       "id": 9,
@@ -333,7 +341,8 @@
           ],
           "values": false
         }
-      }
+      },
+      "description": "Count of profile updates recorded in the previous 24 hours; these are historical events."
     },
     {
       "id": 10,
@@ -353,7 +362,8 @@
         {
           "refId": "A",
           "expr": "sum(count_over_time({job=\"czts\",event_type=\"session_start\"}[7d])) - sum(count_over_time({job=\"czts\",event_type=\"session_end\"}[7d]))",
-          "queryType": "instant"
+          "queryType": "instant",
+          "legendFormat": "Updates"
         }
       ],
       "options": {
@@ -363,7 +373,8 @@
           ],
           "values": false
         }
-      }
+      },
+      "description": "Seven-day difference between session start and end events. A nonzero value can include interrupted or missing logs; it is not a live connection count."
     },
     {
       "id": 11,
@@ -383,7 +394,8 @@
         {
           "refId": "A",
           "expr": "sum(count_over_time({job=\"czts\",event_type=\"learning_update\"}[1h]))",
-          "queryType": "range"
+          "queryType": "range",
+          "legendFormat": "Updates"
         }
       ],
       "options": {

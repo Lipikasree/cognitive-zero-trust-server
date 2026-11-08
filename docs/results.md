@@ -94,7 +94,7 @@ Run the scripted checks with `python eval/scripts/evaluate_stage16.py`.
 
 ![CZTS Grafana dashboard from the clean local run](images/grafana-dashboard.png)
 
-The session-ID legend is redacted from this screenshot.
+The screenshot shows real gateway demo events. The 24-hour cards count completed test/demo activity, while the time-series panels show the most recent 30 minutes. It is not production traffic or a view of currently open SSH sessions.
 
 The PTY capture check used 30 SSH sessions: 20 ordinary command lines and 10 lines containing arrow keys or Tab. Ordinary lines matched exactly in 20/20 cases; all 10 awkward lines failed closed and no test payload was executed. A separate alternate-screen check recorded start/end transitions and trust decay over an observed 0.205 seconds. The SSH setup-plus-`whoami` benchmark measured a median added 1,478.6 ms; the direct and gateway probes ran in different network contexts, so this is not a controlled overhead estimate.
 

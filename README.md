@@ -13,7 +13,7 @@ A Windows-hosted SSH gateway that checks commands during a session and adjusts a
 
 ![CZTS Grafana dashboard from the clean local run](docs/images/grafana-dashboard.png)
 
-*Dashboard screenshot; session identifiers redacted.*
+*Live gateway demo telemetry from completed sessions; counters are historical, not active-connection counts.*
 
 ## Start
 
