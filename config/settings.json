@@ -1,0 +1,30 @@
+{
+  "initial_belief": 0.97,
+  "allowed_threshold": 0.70,
+  "recover_threshold": 0.76,
+  "discarded_threshold": 0.30,
+  "uncertainty_band_widening": 0.08,
+  "role_overrides": {
+    "developer": {"step_up_categories": ["service_management", "credential_access", "privilege_escalation", "persistence", "exfiltration", "destructive"]},
+    "sysadmin": {"step_up_categories": ["service_management", "credential_access", "persistence", "exfiltration", "destructive"]},
+    "data_analyst": {"step_up_categories": ["service_management", "credential_access", "exfiltration", "destructive"]},
+    "operator": {"step_up_categories": ["service_management", "credential_access", "privilege_escalation", "persistence", "exfiltration", "destructive"]}
+  },
+  "decay_half_life_seconds": 1800,
+  "max_evidence_magnitude": 1.2,
+  "recovery_factor": 0.25,
+  "discard_lock_seconds": 300,
+  "step_up_uncertainty_cost_threshold": 0.22,
+  "totp_categories": ["privilege_escalation", "credential_access", "persistence", "exfiltration", "destructive"],
+  "totp_attempt_limit": 3,
+  "challenge_cooldown_seconds": 120,
+  "attacker_probability_floor": 0.015,
+  "profile_forgetting_factor": 0.995,
+  "quarantine_delay_seconds": 300,
+  "quarantine_poll_seconds": 10,
+  "auth_max_failures": 5,
+  "auth_window_seconds": 60,
+  "auth_lock_seconds": 90,
+  "restricted_categories": ["privilege_escalation", "exfiltration", "destructive", "persistence", "defense_evasion"],
+  "step_up_categories": ["service_management", "credential_access", "privilege_escalation", "persistence", "exfiltration", "destructive"]
+}

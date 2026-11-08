@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "username": "alice",
+      "role": "developer",
+      "client_public_keys": [],
+      "upstream_username": "czt-demo",
+      "upstream_public_key": "",
+      "enabled": true
+    }
+  ]
+}
